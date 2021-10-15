@@ -15,9 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	
 	<link rel="stylesheet" href="/local/css/base.min.css">
-
-	<link rel="stylesheet" href="/local/others/nouislider.min.css">
-	<link rel="stylesheet" href="/local/css/main.css">
+	
 </head>
 
 <body class="page">
@@ -59,242 +57,9 @@
 
 	<main>
 		<div class="container">
-			<div class="media-wrap">
-				<div class="img-box">
-					<picture class="lazy">
-						<source media="(min-width: 769px)" data-srcset="/local/img/media-big.webp" srcset="" type="image/webp">
-						<source media="(min-width: 769px)" data-srcset="/local/img/media-big.jpg" srcset="">
-						<source data-srcset="/local/img/media-mob.webp" srcset="" type="image/webp">
-						<img data-src="/local/img/media-mob.png" src="" alt="Image is here">
-					</picture>
-				</div>
-			</div>
-
-			<section class="catalog">
-				
-				<button class="filter-toggle">Filter</button>
-
-				<form class="catalog-filter" action="">
-					<label class="search">
-						<input type="text" placeholder="Search by serial number">
-					</label>
-
-					<details>
-						<summary>Option</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>On Sale</span>
-								</label>
-							</li>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>Auction</span>
-								</label>
-							</li>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>For Rent</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Century</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="radio" name="century">
-									<span class="checkbox"></span>
-									<span>Ancient</span>
-								</label>
-							</li>
-							<li>
-								<label>
-									<input type="radio" name="century">
-									<span class="checkbox"></span>
-									<span>Our time</span>
-								</label>
-							</li>
-							<li>
-								<label>
-									<input type="radio" name="century">
-									<span class="checkbox"></span>
-									<span>Future</span>
-								</label>
-							</li>
-							<li>
-								<label>
-									<input type="radio" name="century">
-									<span class="checkbox"></span>
-									<span>Other World</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Type</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="radio" name="Type">
-									<span class="checkbox"></span>
-									<span>Light</span>
-								</label>
-							</li>
-							<li>
-								<label>
-									<input type="radio" name="Type">
-									<span class="checkbox"></span>
-									<span>Medium</span>
-								</label>
-							</li>
-							<li>
-								<label>
-									<input type="radio" name="Type">
-									<span class="checkbox"></span>
-									<span>Heavy</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Lemon Gen</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>Lemon Gen</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Background</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>Background</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Top</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>Top</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Expressions</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>Expressions</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Eyes</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>Eyes</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Accessory</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>Accessory</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details open>
-						<summary>Win Rate</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="radio" name="Type">
-									<span class="checkbox"></span>
-									<span>Yes</span>
-								</label>
-							</li>
-							<li>
-								<label>
-									<input type="radio" name="Type">
-									<span class="checkbox"></span>
-									<span>No</span>
-								</label>
-							</li>
-							<li>
-								<div class="slider-wrap">
-									<div class="slider" id="win-rate"></div>
-								</div>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Breeding</summary>
-						<ul>
-							<li>
-								<label>
-									<input type="checkbox">
-									<span class="checkbox"></span>
-									<span>Breeding</span>
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details>
-						<summary>Rarity</summary>
-						<ul>
-							<li>
-								<div class="slider-wrap">
-									<div class="slider" id="rarity"></div>
-								</div>
-							</li>
-						</ul>
-					</details>
-				</form>
-
+			<h1>You kitchen</h1>
+			
+			<section class="catalog kitchen">			
 				<div class="catalog-inner">
 					<form class="catalog-sorting" action="">
 						<ul class="sorting">
@@ -305,10 +70,6 @@
 							<li>Land</li>
 							<li>Merchandise</li>
 						</ul>
-
-						<div class="serial-number">
-							Serial number
-						</div>
 					</form>
 
 					<div class="cards-wrap">
@@ -355,6 +116,10 @@
 									<img data-src="/local/img/fighters-27.png" src="" alt="Image is here">
 								</picture>
 							</div>
+							<a href="#"></a>
+						</div>
+						<div class="buy-more">
+							<span class="btn">buy more</span>
 							<a href="#"></a>
 						</div>
 					</div>

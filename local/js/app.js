@@ -115,53 +115,116 @@ function classToggle(target, className) {
 }
 
 window.addEventListener('load', () => {
-	document.querySelector('.nav-toggle').addEventListener('click', function () {
+	/***** Tabs *****/
+
+	let tabsWrap = document.querySelectorAll('.tabs');
+
+	if (tabsWrap != null) {
+		tabsWrap.forEach(function (tabs) {
+			let tabsHeader = tabs.querySelectorAll('.tabs-header');
+			let tabContent = tabs.querySelectorAll('.tab-content');
+			let tabIdx = 0;
+
+			tabsHeader.forEach(function (tabHeader) {
+				let tab = tabHeader.querySelectorAll('.tab');
+				let target;
+
+				tab.forEach(function (el, idx) {
+					el.addEventListener('click', function () {
+						classToggle(this, 'active');
+						tabIdx = idx;
+
+						tabContent.forEach(function () {
+							let target = tabContent[idx];
+							classToggle(target, 'active');
+						});
+					});
+				});
+			});
+		});
+	}
+
+	/* * */
+
+	/* Toggle btns */ 
+
+	let navToggleBtn = document.querySelector('.nav-toggle');
+
+	navToggleBtn.addEventListener('click', function () {
 		this.classList.toggle('active');
 		document.querySelector('header').classList.toggle('nav-open');
 	});
-	
-	document.querySelector('.filter-toggle').addEventListener('click', function () {
-		this.classList.toggle('active');
-		document.querySelector('.catalog-filter').classList.toggle('active');
-	});
+
+	let filterToggleBtn = document.querySelector('.filter-toggle');
+
+	if (filterToggleBtn != null) {
+		filterToggleBtn.addEventListener('click', function () {
+			this.classList.toggle('active');
+			document.querySelector('.catalog-filter').classList.toggle('active');
+		});
+	}
+
+	let inventoryToggle = document.querySelector('.inventory-toggle');
+	let inventoryWrap = document.querySelector('.inventory-wrap');
+
+	if (inventoryToggle != null && inventoryWrap != null) {
+		inventoryToggle.addEventListener('click', function () {
+			inventoryWrap.classList.add('active');
+		});
+	}
+
+	let inventoryClose = document.querySelector('.inventory-close');
+
+	inventoryClose.addEventListener('click', function () {
+		inventoryWrap.classList.remove('active');
+	})
+
+	/* * */
+
 
 	let winRateSlider = document.getElementById('win-rate');
 
-	noUiSlider.create(winRateSlider, {
-		start: 30,
-		behaviour: 'snap',
-		range: {
-			'min': [0],
-			'max': [100]
-		},
-	});
+	if (winRateSlider != null) {
 
-	let winRateValWrap = document.querySelector('#win-rate .noUi-touch-area');
-
-	if (winRateValWrap != null) {
-		winRateSlider.noUiSlider.on('update', function (values) {
-
-			winRateValWrap.innerHTML = parseInt(values) + `%`;
-
+		noUiSlider.create(winRateSlider, {
+			start: 30,
+			behaviour: 'snap',
+			range: {
+				'min': [0],
+				'max': [100]
+			},
 		});
+
+		let winRateValWrap = document.querySelector('#win-rate .noUi-touch-area');
+
+		if (winRateValWrap != null) {
+			winRateSlider.noUiSlider.on('update', function (values) {
+
+				winRateValWrap.innerHTML = parseInt(values) + `%`;
+
+			});
+		}
 	}
-	
+
 	let raritySlider = document.getElementById('rarity');
 
-	noUiSlider.create(raritySlider, {
-		start: 60,
-		behaviour: 'snap',
-		range: {
-			'min': [0],
-			'max': [100]
-		},
-	});
-
-	let rarityValWrap = document.querySelector('#rarity .noUi-touch-area');
-
-	if (rarityValWrap != null) {
-		raritySlider.noUiSlider.on('update', function (values) {
-			rarityValWrap.innerHTML = parseInt(values) + `%`;
+	if (raritySlider != null) {
+		
+		noUiSlider.create(raritySlider, {
+			start: 60,
+			behaviour: 'snap',
+			range: {
+				'min': [0],
+				'max': [100]
+			},
 		});
+
+		let rarityValWrap = document.querySelector('#rarity .noUi-touch-area');
+
+		if (rarityValWrap != null) {
+			raritySlider.noUiSlider.on('update', function (values) {
+				rarityValWrap.innerHTML = parseInt(values) + `%`;
+			});
+		}
 	}
 });
