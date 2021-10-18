@@ -146,7 +146,7 @@ window.addEventListener('load', () => {
 
 	/* * */
 
-	/* Toggle btns */ 
+	/* Toggle btns */
 
 	let navToggleBtn = document.querySelector('.nav-toggle');
 
@@ -164,20 +164,26 @@ window.addEventListener('load', () => {
 		});
 	}
 
-	let inventoryToggle = document.querySelector('.inventory-toggle');
-	let inventoryWrap = document.querySelector('.inventory-wrap');
+	let inventoryToggle = document.querySelectorAll('.inventory-toggle');
+	let inventoryWrap = document.querySelectorAll('.inventory-wrap');
 
 	if (inventoryToggle != null && inventoryWrap != null) {
-		inventoryToggle.addEventListener('click', function () {
-			inventoryWrap.classList.add('active');
+		inventoryToggle.forEach(function (toggle) {
+			toggle.addEventListener('click', function () {
+				let toggleData = toggle.getAttribute('data-modal');
+				
+				classToggle(document.querySelector(`.inventory-wrap[data-modal="${toggleData}"]`), 'active');
+			});
+		});
+
+		inventoryWrap.forEach(function (wrap) {
+			let inventoryClose = wrap.querySelector('.inventory-close');
+
+			inventoryClose.addEventListener('click', function () {
+				wrap.classList.remove('active');
+			});
 		});
 	}
-
-	let inventoryClose = document.querySelector('.inventory-close');
-
-	inventoryClose.addEventListener('click', function () {
-		inventoryWrap.classList.remove('active');
-	})
 
 	/* * */
 
@@ -209,7 +215,7 @@ window.addEventListener('load', () => {
 	let raritySlider = document.getElementById('rarity');
 
 	if (raritySlider != null) {
-		
+
 		noUiSlider.create(raritySlider, {
 			start: 60,
 			behaviour: 'snap',

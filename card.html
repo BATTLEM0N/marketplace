@@ -66,8 +66,8 @@
 					</div>
 
 					<div class="btns-wrap">
-						<button class="btn inventory-toggle">Inventory</button>
-						<button class="btn">NFT resources</button>
+						<button class="btn inventory-toggle" data-modal="inventory">Inventory</button>
+						<button class="btn inventory-toggle" data-modal="resourses">NFT resources</button>
 					</div>
 				</div>
 
@@ -224,8 +224,47 @@
 						<button class="btn">RENT</button>
 					</div>
 
-					<div class="inventory-wrap">
+					<div class="inventory-wrap" data-modal="inventory">
 						<h2>Inventory</h2>
+
+						<div class="inventory-close">
+							<span class="line"></span>
+							<span class="line"></span>
+						</div>					
+
+						<div class="items">
+							<div class="item">
+								<div class="img-box">
+									<picture class="lazy">
+										<source data-srcset="/local/img/wp-01.webp" srcset="" type="image/webp">
+										<img data-src="/local/img/wp-01.png" src="" alt="Image is here">
+									</picture>
+								</div>
+							</div>
+							<div class="item">
+								<div class="img-box">
+									<picture class="lazy">
+										<source data-srcset="/local/img/wp-02.webp" srcset="" type="image/webp">
+										<img data-src="/local/img/wp-02.png" src="" alt="Image is here">
+									</picture>
+								</div>
+							</div>
+							<div class="item">
+								<div class="img-box">
+									<picture class="lazy">
+										<source data-srcset="/local/img/wp-03.webp" srcset="" type="image/webp">
+										<img data-src="/local/img/wp-03.png" src="" alt="Image is here">
+									</picture>
+								</div>
+							</div>
+							<div class="item"></div>
+							<div class="item"></div>
+							<div class="item"></div>
+						</div>
+					</div>
+					
+					<div class="inventory-wrap" data-modal="resourses">
+						<h2>NFT resourcesy</h2>
 
 						<div class="inventory-close">
 							<span class="line"></span>
@@ -300,12 +339,87 @@
 				<div class="history">
 					<div class="tabs">
 						<div class="tabs-header">
-							<button class="tab">Trading history</button>
-							<button class="tab active">Offer history</button>
+							<button class="tab active">Trading history</button>
+							<button class="tab">Offer history</button>
 						</div>
 						<div class="tabs-body">
-							<div class="tab-content"></div>
 							<div class="tab-content active">
+								<table>
+									<thead>
+										<tr>
+											<th>
+												<span>Event</span>
+											</th>
+											<th>
+												<span>Price</span>
+											</th>
+											<th>
+												<span>From</span>
+											</th>
+											<th>
+												<span>To</span>
+											</th>
+											<th>
+												<span>Dateк</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<span>List</span>
+											</td>
+											<td>
+												<span>22</span>
+											</td>
+											<td>
+												<span>trackOon</span>
+											</td>
+											<td>
+												<span>trackOon</span>
+											</td>
+											<td>
+												<span>a day ago</span>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<span>List</span>
+											</td>
+											<td>
+												<span>22</span>
+											</td>
+											<td>
+												<span>trackOon</span>
+											</td>
+											<td>
+												<span>trackOon</span>
+											</td>
+											<td>
+												<span>a day ago</span>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<span>List</span>
+											</td>
+											<td>
+												<span>22</span>
+											</td>
+											<td>
+												<span>trackOon</span>
+											</td>
+											<td>
+												<span>trackOon</span>
+											</td>
+											<td>
+												<span>a day ago</span>
+											</td>
+										</tr>										
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-content">
 								<table>
 									<thead>
 										<tr>
