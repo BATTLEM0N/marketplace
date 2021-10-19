@@ -169,10 +169,16 @@ window.addEventListener('load', () => {
 
 	if (inventoryToggle != null && inventoryWrap != null) {
 		inventoryToggle.forEach(function (toggle) {
-			toggle.addEventListener('click', function () {
+			toggle.addEventListener('click', function () {		
 				let toggleData = toggle.getAttribute('data-modal');
 				
-				classToggle(document.querySelector(`.inventory-wrap[data-modal="${toggleData}"]`), 'active');
+				if (this.classList.contains('active')) {
+					this.classList.remove('active');
+					document.querySelector(`.inventory-wrap[data-modal="${toggleData}"]`).classList.remove('active');
+				} else {
+					classToggle(this, 'active');
+					classToggle(document.querySelector(`.inventory-wrap[data-modal="${toggleData}"]`), 'active');
+				}
 			});
 		});
 
